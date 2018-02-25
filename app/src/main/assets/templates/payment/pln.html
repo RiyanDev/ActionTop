@@ -1,0 +1,52 @@
+<ion-view view-title="Tagihan PLN" class="grey_bg">
+  	<ion-content padding="10">
+
+      <div class="list card">
+        <div class="item item-divider">
+          <strong>PLN</strong>
+        </div>
+        <div class="item item-text-wrap">
+          <label class="item item-input item-select">
+            <div class="input-label">
+              Produk PLN
+            </div>
+            <select id="typePLN" ng-model="data.produk" ng-change="changePLN(data.produk)">
+              <option value="PLNPASCH">PLN Pascabayar</option>
+              <option value="PLNPRAY">PLN Prabayar</option>
+              <option value="PLNNONH">PLN Nontaglis</option>
+            </select>
+          </label>
+          <label class="item item-input">
+            <span class="input-label">ID Pelanggan</span>
+            <input type="text" ng-model="data.idpel" ng-maxlength="12">
+          </label>
+          <label class="item item-input">
+            <span class="input-label">Nama Pelanggan</span>
+            <input type="text" ng-model="data.namapel" disabled>
+          </label>
+          <label class="item item-input">
+            <span class="input-label">Nominal Tagihan</span>
+            <input type="text" ng-model="data.nominal" ng-disabled="disableNominal">
+          </label>
+          <label class="item item-input">
+            <span class="input-label">Biaya Admin</span>
+            <input type="text" ng-model="data.biayaadmin" disabled>
+          </label>
+          <label class="item item-input">
+            <span class="input-label">Periode</span>
+            <input type="text" ng-model="data.periode" disabled>
+          </label>
+          <label class="item item-input">
+            <span class="input-label">Keterangan</span>
+            <input type="text" ng-model="data.keterangan" disabled>
+          </label>
+          <button ng-click="doInquiry();" ng-disabled="disableInquiry" class="button button-block button-positive">
+            {{buttonCheck}}
+          </button>
+          <button ng-click="doPayment();" ng-disabled="disablePayment" class="button button-block button-royal">
+            {{buttonPay}}
+          </button>
+        </div>
+      </div>
+  </ion-content>
+</ion-view>

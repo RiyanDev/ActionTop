@@ -1,0 +1,94 @@
+<ion-view view-title="Informasi E-Wallet" class="grey_bg">
+  	<ion-content padding="10">
+      <ion-refresher
+         	pulling-text="Pull to refresh..."
+         	on-refresh="doRefresh()">
+       	</ion-refresher>
+      <div class="list">
+        <div class="item item-icon-left">
+          <i class="icon ion-cash"></i>
+          Saldo
+          <span class="item-note">
+            <strong>{{info.saldo}}</strong>
+          </span>
+        </div>
+        <div class="item item-icon-left">
+          <i class="icon ion-arrow-right-a"></i>
+          Jumlah Debet
+          <span class="item-note">
+            <strong>{{info.debet}}</strong>
+          </span>
+        </div>
+        <div class="item item-icon-left">
+          <i class="icon ion-arrow-left-a"></i>
+          Jumlah Kredit
+          <span class="item-note">
+            <strong>{{info.kredit}}</strong>
+          </span>
+        </div>
+        <div class="item item-icon-left">
+          <i class="icon ion-stats-bars"></i>
+          Total Transaksi
+          <span class="item-note">
+            <strong>{{info.total_transaksi}}</strong>
+          </span>
+        </div>
+      </div>
+
+      <div class="list">
+        <div class="item item-divider">
+          <strong>History E-Wallet</strong>
+        </div>
+        <div class="item item-button-right" ng-repeat="data in data track by $index">
+          {{data.createdAt}}
+          <button class="button button-positive" ng-click="openModal($index)">
+            <i class="icon ion-information"></i>
+          </button>
+        </div>
+      </div>
+
+      <ion-infinite-scroll
+       	ng-if="postsCompleted == false"
+       	on-infinite="getData()"
+       	distance="10%">
+     	</ion-infinite-scroll>
+
+      <script id="templates/info.html" type = "text/ng-template">
+      <ion-modal-view>
+        <ion-header-bar class="bar bar-header bar-royal">
+          <h1 class="title">Detil History Ewallet</h1>
+          <button class="button button-clear button-primary" ng-click="closeModal()">Kembali</button>
+        </ion-header-bar>
+        <ion-content padding="10">
+          <div class="list">
+            <div class="item">
+              Tanggal
+              <span class="item-note">
+                {{detail.createdAt}}
+              </span>
+            </div>
+            <div class="item">
+              Tipe
+              <span class="item-note">
+                {{detail.tipe}}
+              </span>
+            </div>
+            <div class="item">
+              Jumlah
+              <span class="item-note">
+                {{detail.jumlah}}
+              </span>
+            </div>
+            <div class="item">
+              Keterangan
+              <span class="item-note">
+                {{detail.keterangan}}
+              </span>
+            </div>
+          </div>
+        </ion-content>
+      </ion-modal-view>
+      </script>
+
+  </ion-content>
+</ion-view>

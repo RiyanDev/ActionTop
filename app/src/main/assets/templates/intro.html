@@ -1,0 +1,89 @@
+<style>
+  .icon-costum{
+    color: white;
+    float: right;
+  }
+
+</style>
+
+<ion-view view-title="Home"  class="grey_bg">
+  <ion-content has-header="false" style="background-image:url('img/splash.png');" class="cover-app">
+      <div id="content" >
+          <div id="profile-info" style="background-image:url(img/background-login.jpg);">
+            <img id="profile-image" src="{{profil.avatar}}">
+            <h3 id="profile-name">{{profil.username}}</h3>
+            <span id="profile-description">
+              {{profil.objectId}}
+            </span>
+          </div>
+        </div>
+        <ion-slide class="slide-intro">
+            <div class="content info-section" >
+                <ul>
+                  <li>
+                    <div class="card">
+                      <div class="item item-divider">
+                          Status Member
+                          <i class="ion-android-checkmark-circle icon-costum"></i>
+                      </div>
+                      <div class="item item-text-wrap">
+                        <span class="nominal">{{profil.account}}</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li  ng-if="profil.stockist">
+                     <div class="card">
+                      <div class="item item-divider">
+                          {{profil.stockist}}
+                          <i class="icon-costum ion-android-checkmark-circle"></i>
+                      </div>
+                      <div class="item item-text-wrap">
+                          <span class="nominal">{{profil.stockist_stok}}</span> Stock
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                     <div class="card">
+                      <div class="item item-divider">
+                          Member
+                          <i class="icon-costum ion-android-checkmark-circle"></i>
+                      </div>
+                      <div class="item item-text-wrap">
+                        <span class="nominal">{{profil.members}}</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                     <div class="card">
+                      <div class="item item-divider">
+                          Bonus
+                          <i class="icon-costum ion-android-checkmark-circle"></i>
+                      </div>
+                      <div class="item item-text-wrap">
+                        <span class="nominal">{{profil.bonus}}</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li ng-if="profil.diamond">
+                     <div class="card">
+                      <div class="item item-divider">
+                          Poin
+                          <i class="icon-costum ion-android-checkmark-circle"></i>
+                      </div>
+                      <div class="item item-text-wrap">
+                        <span class="nominal">{{profil.poin}}</span> (Poin)<br>
+                        <span class="nominal">{{profil.diamond}}</span> (Diamond)
+                      </div>
+                    </div>
+                  </li>
+                 
+
+                </ul>
+            </div>
+            
+        </ion-slide>
+        
+        
+      </ion-slide-box>
+    </ion-content>
+</ion-view>

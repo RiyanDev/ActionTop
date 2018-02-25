@@ -1,0 +1,92 @@
+<ion-view view-title="Profil"  class="grey_bg">
+   <ion-content has-header="true">
+      <div id="content" >
+        <div id="profile-info" style="background-image:url(img/background-login.jpg);">
+          <img id="profile-image" src="{{profil.avatar}}" ng-click="openModalFoto()">
+          <h3 id="profile-name">{{profil.username}}</h3>
+          <span id="profile-description">
+          	{{profil.objectId}}
+			</span>
+        </div>
+      </div>
+      <div class="list profil-info">
+      	
+        <a class="item  profil-set" href="#" ng-if="profil.username">
+          
+          {{profil.username}}
+         <span class="item-note">Nama Lengkap</span>
+        </a>
+
+        <a class="item  profil-set" href="#" ng-if="profil.email">
+          
+          {{profil.email}}
+         <span class="item-note">Email</span>
+        </a>
+        <a class="item  profil-set" href="#" ng-if="profil.telp">
+          
+          {{profil.telp}}
+         <span class="item-note">Telp</span>
+        </a>
+      
+        <a class="item  profil-set" href="#" ng-if="profil.nobank">
+         
+          {{profil.nobank}}
+         <span class="item-note">No Rekening</span>
+        </a>
+      
+        <a class="item  profil-set" href="#" ng-if="profil.bank">
+          {{profil.bank}}
+         <span class="item-note">Bank Rekening</span>
+        </a>
+        <a class="item  profil-set" href="#" ng-if="profil.alamat">
+          {{profil.alamat}}
+         <span class="item-note">Alamat</span>
+        </a>
+
+        <a class="item  profil-set" href="#" ng-if="profil.bank">
+          {{profil.kota}}
+         <span class="item-note">Kota / Kab.</span>
+        </a>
+
+        <a class="item  profil-set" href="#" ng-if="profil.propinsi">
+          {{profil.propinsi}}
+         <span class="item-note">Propinsi</span>
+        </a>
+
+        <a class="item  profil-set" href="#" ng-if="profil.negara">
+          {{profil.negara}}
+         <span class="item-note">Negara</span>
+        </a>
+        
+        
+      </div>
+    </ion-content>
+   
+</ion-view>
+
+<script id="foto-modal.html" type="text/ng-template">
+<ion-modal-view class="grey_bg">
+  <ion-nav-bar class="bar-royal">
+    
+    <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-close-round" ng-click="closeModal()">
+          </button>
+      </ion-nav-buttons>
+  </ion-nav-bar>
+  <ion-content class="has-header" padding="10">
+      <div class="list">
+        <div class="content-foto-edit">
+         <img id="edit-profile-image" ng-src="{{picData}}">
+         <br/><br/>
+          <div class="button-bar">
+              <a class="button button-royal" ng-click="takePicture();"><i class="icon ion-camera"></i></a>
+              <a class="button button-royal" ng-click="selectPicture()"><i class="icon ion-images"></i></a>
+            </div>
+        </div>
+      <button class="button button-block button-royal {{hideupload}}" ng-click="uploadfoto()">
+        Save
+      </button>
+      </div>
+  </ion-content>
+</ion-modal-view>
+</script>

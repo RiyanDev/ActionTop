@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html>                      
+    <head>
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  
+        <title>Product Azaria by riyan</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body onload="init()">
+        <div class="container">
+            <!-- Static navbar -->
+            <!--<nav class="navbar navbar-default">
+                <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">SendMyKart - Assesement</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li class="dropdown-header">Nav header</li>
+                        <li><a href="#">Separated link</a></li>
+                        <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                    </ul>
+                </div>
+                </div>
+            </nav>-->
+            
+            <div class="row">
+                <div class="col-md-8 col-sm-6">
+                    <!--<h2 class="page-title">Products</h2>-->
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="input-group custom-search-form">
+                        <input type="text" placeholder="Search Products" id="search_query" class="form-control">
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" type="button" onclick="search()">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                            <button class="btn btn-success" type="button" data-toggle="dropdown">Sort
+                                <span class="glyphicon glyphicon-filter"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                            <li><a href="#" onclick="sort('lth')">Price: Low to High</a></li>
+                            <li><a href="#" onclick="sort('htl')">Price: High to Low</a></li>
+                            </ul>
+                        </span>
+                    </div><!-- /input-group -->
+                </div>
+            </div>
+            <hr/>
+            <br/>
+            <div class="row" id="product_content">
+                <!-- PRODUCTS HERE -->
+			  <div class="col-xs-12"><center>Loading..</center>.</div>
+            </div>
+        </div>
+	<br/><br/>
+        <!-- SCRIPTS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>

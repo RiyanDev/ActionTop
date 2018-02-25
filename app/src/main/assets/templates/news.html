@@ -1,0 +1,21 @@
+<ion-view view-title="Berita">
+   <ion-content class="post-content">
+    <ion-refresher
+        pulling-text="Pull to refresh..."
+        on-refresh="doRefresh()">
+      </ion-refresher>
+      <div class="list">
+          <a href="#/app/post/{{blog.link}}" class="item item-thumbnail-left" ng-repeat="blog in items">
+            <img ng-src="{{blog.image}}"></img>
+            <h2>{{blog.title}}</h2>
+            <p>{{blog.contentSnippet}}</p>
+            <p>{{blog.publishedDate}}</p>
+          </a>
+      </div>
+      <!-- <ion-infinite-scroll
+        ng-if="postsCompleted == false"
+        on-infinite="loadFeed()"
+        distance="10%">
+      </ion-infinite-scroll> -->
+   </ion-content>
+</ion-view>

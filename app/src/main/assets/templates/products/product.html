@@ -1,0 +1,70 @@
+<ion-view view-title="{{titleview}}">
+    <ion-content>
+        <div class="list card">
+         
+         <div class="item item-body">
+              <img ng-src="{{base_url_image}}{{selected_.url}}"/>
+         </div>
+         <div class="item">
+            <h2 class="post-title">{{selected_.nama}}</h2>
+         </div>
+         <div class="item">
+            <a class="" onclick="window.open(this.href, '_system', 'location=yes'); return false;" href="{{base_url}}shop/product/{{selected_.slug}}">
+            <h2 class="post-title button button-small button-assertive button-block">Price: Rp. {{selected_.harga_associated}} {{baynow}}</h2>
+            </a>
+            <a class="item item-icon-left" href="#">
+                <i class="icon"></i>
+                <b>Rp. {{selected_.harga_retil}}</b>
+                <span class="item-note">
+                  Harga Retail
+                </span>
+                
+            </a>
+            <a class="item item-icon-left" href="#">
+              <i class="icon"></i>
+                <b>Rp. {{selected_.point}}0.000</b>
+                <span class="item-note">
+                  Cashback
+                </span>
+            </a>
+         </div>
+       <!--  <div class="row detail-item">
+            <div class="col col-33">
+                <i class="icon"></i>
+                <b>Rp. {{selected_.harga_retil}}</b>
+                <span class="item-note">
+                  Harga Associate
+                </span>
+            </div>
+            <div class="col col-33">
+                <i class="icon"></i>
+                <b>Rp. {{selected_.harga_retil}}</b>
+                <span class="item-note">
+                  Harga Retail
+                </span>
+            </div>
+            <div class="col col-33">
+                <i class="icon"></i>
+                <b>{{selected_.point}}</b>
+                <span class="item-note">
+                  Point Reward
+                </span>
+            </div>
+        </div> -->
+
+         <!-- <div class="item tabs tabs-secondary">
+            <div class="button-bar">
+                <a class="button button-positive" ng-click="changeRev();" ng-class="{'active':details == true}">Details</a>
+                <a class="button button-positive" ng-click="changeRev();" ng-class="{'active':details == false}">Reviews</a>
+            </div>
+         </div> -->
+         <!--<div class="item item-body" ng-show="details" dir ng-bind-html="selected_.deskripsi">-->
+         </div>
+         <!-- <a ng-repeat="item in selected_.reviews" ng-hide="details" class="item item-avatar">
+            <img ng-src="http://3.bp.blogspot.com/-PzPenQ-FGz0/VYGj9bPPbCI/AAAAAAAAA1w/0xw6K-h5bz0/s72-c/girl-785304_1280.jpg">
+            <h2>Admin</h2>
+            <p>{{item.comment}}</p>
+         </a> -->
+        </div>
+  </ion-content>
+</ion-view>

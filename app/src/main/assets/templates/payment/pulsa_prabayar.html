@@ -1,0 +1,55 @@
+<ion-view view-title="Pulsa Prabayar" class="grey_bg">
+  	<ion-content padding="10">
+
+      <div class="list card">
+        <div class="item item-divider">
+          <strong>Pembelian Pulsa Prabayar</strong>
+        </div>
+        <div class="item item-text-wrap">
+          <label class="item item-input">
+            <span class="input-label">Nomor HP</span>
+            <input ng-model="data.nohp" type="text">
+          </label>
+          <label class="item item-input item-select">
+            <div class="input-label">
+              Operator
+            </div>
+            <select id="operatorSelect" ng-model="filter" ng-change="doData(filter)">
+              <option value="axis">AXIS</option>
+              <option value="bolt">BOLT</option>
+              <option value="flexi">FLEXI</option>
+              <option value="fren">FREN</option>
+              <option value="hepi">HEPI</option>
+              <option value="indosat">INDOSAT M2</option>
+              <option value="isat">INDOSAT</option>
+              <option value="smart">SMART</option>
+              <option value="starone">STARONE</option>
+              <option value="simpati">SIMPATI DATA</option>
+              <option value="telkomsel">TELKOMSEL</option>
+              <option value="three">3 (THREE)</option>
+              <option value="wifi">WIFI</option>
+              <option value="xl">XL</option>
+              <option value="xlcom">XLCOM</option>
+            </select>
+          </label>
+          <label class="item item-input">
+            <div class="input-label">
+              Nominal
+            </div>
+            <button class="button button-clear button-royal pull-right item-note" modal-select="" ng-model="nominalPulsa" options="pulsa" modal-title="Pilih Nominal Pulsa" header-footer-class="bar-royal" sub-header-class="bar-royal" on-select="setproduk(newValue)" hide-reset="false" ng-disabled="filter == null">
+              {{nominalPulsa.nama_produk}}
+              <div class="option">
+                <h2>{{option.nama_produk}}</h2>
+                <p>{{option.kategori}} | Harga : Rp {{option.harga}}</p>
+              </div>
+            </button>
+
+          </label>
+          <button ng-disabled="disableButton" ng-click="doTopup();" class="button button-block button-royal">
+           	{{buttonCheck}}
+          </button>
+        </div>
+      </div>
+
+  </ion-content>
+</ion-view>

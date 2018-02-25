@@ -1,0 +1,60 @@
+<ion-view view-title="Cari Penerbangan" class="grey_bg">
+  	<ion-content padding="10">
+      <div class="list card">
+        <div class="item item-text-wrap">
+          <ion-list>
+            <ion-radio ng-model="choice" ng-value="'A'">Sekali Jalan</ion-radio>
+            <ion-radio ng-model="choice" ng-value="'B'">Pulang Pergi</ion-radio>
+          </ion-list>
+        </div>
+      </div>
+      <div class="list card">
+        <div class="item item-text-wrap">
+          <label class="item item-input">
+            <div class="input-label">
+              Dari
+            </div>
+            <button class="button button-clear button-royal pull-right item-note" modal-select="" ng-model="airportDari" options-expression="airport in airport | orderBy: 'm_airport_nama'" modal-title="Pilih Airport Keberangkatan" header-footer-class="bar-royal" sub-header-class="bar-royal" on-select="setberangkat(newValue)" hide-reset="false" has-search="true" search-properties="searchProperties" clear-search-on-select="true">
+              {{airportDari.m_airport_nama}}
+              <div class="option">
+                <h2>{{option.m_airport_nama}}</h2>
+                <p>{{option.m_airport_code}}</p>
+              </div>
+            </button>
+          </label>
+          <label class="item item-input">
+            <div class="input-label">
+              Tujuan
+            </div>
+            <button class="button button-clear button-royal pull-right item-note" modal-select="" ng-model="airportTujuan" options-expression="airport in airport | orderBy: 'm_airport_nama'" modal-title="Pilih Airport Keberangkatan" header-footer-class="bar-royal" sub-header-class="bar-royal" on-select="setdatang(newValue)" hide-reset="false" has-search="true" search-properties="searchProperties" clear-search-on-select="true">
+              {{airportTujuan.m_airport_nama}}
+              <div class="option">
+                <h2>{{option.m_airport_nama}}</h2>
+                <p>{{option.m_airport_code}}</p>
+              </div>
+            </button>
+          </label>
+        </div>
+      </div>
+      <div class="list card">
+        <div class="item item-text-wrap">
+          <label class="item item-input">
+            <div class="input-label">
+              Tanggal Keberangkatan
+            </div>
+            <button class="button button-clear button-royal pull-right  item-note" ng-click="openDatePicker();">
+              Pilih Tanggal
+            </button>
+          </label>
+        </div>
+        <div class="item item-text-wrap">
+          <label class="item item-input">
+            <div class="input-label">
+              Tanggal Pulang
+            </div>
+          </label>
+        </div>
+      </div>
+
+  </ion-content>
+</ion-view>

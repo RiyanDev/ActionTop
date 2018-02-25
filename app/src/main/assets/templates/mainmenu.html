@@ -1,0 +1,257 @@
+<style>
+  .menu-icon{
+    display: block;
+    font-size: 35px;
+    max-height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+  }
+
+</style>
+
+<ion-view view-title="Home" class="grey_bg">
+  <!-- <ion-content has-header="false" style="background:#4D1B73 url('img/splash.png') no-repeat scroll center bottom / 100% auto"> -->
+	<ion-content has-header="false">
+      <div>
+          <ion-slide-box class="slide-banner">
+            <ion-slide ng-repeat="itemS in dataSlide" repeat-done="repeatDone()">
+                <div>
+                  <img src="{{itemS.filename}}">
+                </div>
+            </ion-slide>
+            
+          </ion-slide-box>
+      </div>
+      <div>
+        <ion-slide-box class="slide-banner">
+          
+            <ion-slide ng-repeat="prod in produk" repeat-done="repeatDone()">
+                <div class="row">
+                  <div class="col col-50" ng-repeat="p in prod">
+                    <a href="#/app/product/{{p.id}}">
+                      <img src="{{base_url_image}}{{p.url}}">
+                    </a>
+                  </div>
+                </div>
+            </ion-slide>
+          
+        </ion-slide-box>
+      </div>
+
+      <div>
+        <ion-slide-box class="slide-banner">
+            <ion-slide ng-repeat="n in news" repeat-done="repeatDone()">
+                    <a href="#/app/post/{{n.link}}" class="item item-thumbnail-left">
+                      <img ng-src="{{n.image}}">
+                      <h2>{{n.title}}</h2>
+                      <p>{{n.contentSnippet}}</p>
+                    </a>
+            </ion-slide>
+        </ion-slide-box>
+      </div>
+      <br>
+      <ion-scroll direction="x"
+    		<div class="item" style="overflow-x:scroll;">
+            <div class="content main-menu" ng-class="{ 'hide': showmenu === 'noshow' }">
+                <ul>
+                  <li class="text-center">
+                     <a  href="#/app/intro">
+                      <img src="img/icon/Dashboard.png" class="menu-icon"/>
+                      Dashboard
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#/app/profile" >
+                      <img src="img/icon/Profil.png" class="menu-icon"/>
+                      Profil
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#/app/bonus" >
+                      <img src="img/icon/Bonus.png" class="menu-icon"/>
+                      Bonus
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#/app/friends" >
+                      <img src="img/icon/Member.png" class="menu-icon"/>
+                      Member
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#/app/associate" >
+                      <img src="img/icon/Registrasi.png" class="menu-icon"/>
+                      Registrasi
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#/app/resi" >
+                      <img src="img/icon/Resi.png" class="menu-icon"/>
+                      Resi
+                    </a>
+                  </li>
+                  <li class="{{showstockist}}">
+                    
+                      <a href="#/app/stockist">
+                        <i class="icon ion-android-people"></i>
+                        {{profil.stockist}}
+                      </a>
+                    
+                  </li>
+                  <li>
+                    <a href="#/app/products" >
+                      <img src="img/icon/Store.png" class="menu-icon"/>
+                      Store
+                    </a>
+                  </li>
+                   <li class="{{profil.ebook}}">
+                    <a href="#/app/ebook" >
+                      <img src="img/icon/Ebook.png" class="menu-icon"/>
+                      Ebook
+                    </a>
+                  </li>
+                  <li class="{{profil.wallet}}">
+                    <a href="#/app/ewallet" >
+                      <img src="img/icon/Ewallet.png" class="menu-icon"/>
+                      E-wallet
+                    </a>
+                  </li>
+                  <li class="{{profil.wallet}}">
+                    <a href="#/app/payment" >
+                      <img src="img/icon/Pembayaran.png" class="menu-icon"/>
+                      Pembayaran
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#/app/news" >
+                      <img src="img/icon/Berita.png" class="menu-icon"/>
+                      Berita
+                    </a>
+                  </li>
+                  <!-- <li>
+                    <a href="#/app/siba" >
+                      <i class="icon ion-ios-paper"></i>
+                      SIBA
+                    </a>
+                  </li> -->
+                  <!-- <li>
+                    <a href="#/app/videos" >
+                      <i class="icon ion-social-youtube"></i>
+                      Video
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#/app/gallery" >
+                      <i class="icon ion-images"></i>
+                      Galeri
+                    </a>
+                  </li> -->
+                  <li>
+                    <a href="#/app/about" >
+                      <img src="img/icon/Tentang.png" class="menu-icon"/>
+                      Tentang Kami
+                    </a>
+                  </li>
+                  <li>
+                    <a ng-click="goLogOut()" >
+                      <img src="img/icon/Logout.png" class="menu-icon"/>
+                      Logout
+                    </a>
+                  </li>
+                  
+
+                </ul>
+            </div>
+            <div class="content main-menu" ng-class="{ 'hide': showmenu === 'show' }">
+                <ul>
+                  <li>
+                    <a href="#/app/login">
+                      <img src="img/icon/Login.png" class="menu-icon"/>
+                      Login
+                    </a>
+
+                  </li>
+                  <li>
+                    <a href="#/app/products">
+                      <img src="img/icon/Store.png" class="menu-icon"/>
+                      Store
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#/app/news">
+                      <img src="img/icon/Berita.png" class="menu-icon"/>
+                      Berita
+                    </a>
+                  </li>
+                  <!-- <li>
+                    <a href="#/app/siba">
+                      <i class="icon ion-ios-paper"></i>
+                      SIBA
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#/app/videos">
+                      <i class="icon ion-social-youtube"></i>
+                      Video
+                    </a>
+                  </li> -->
+                  <li>
+                    <a href="#/app/gallery">
+                      <img src="img/icon/Galeri.png" class="menu-icon"/>
+                      Galeri
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#/app/associate">
+                      <img src="img/icon/Associate.png" class="menu-icon"/>
+                      Associate
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="#/app/static/tentang_kami">
+                      <img src="img/icon/Tentang.png" class="menu-icon"/>
+                      Tentang Kami
+                    </a>
+                  </li>
+                </ul>
+            </div>
+    		</div>
+      </ion-scroll>
+    		
+      
+
+  	</ion-content>
+</ion-view>
+
+<script id="hobbi-modal.html" type="text/ng-template">
+<ion-modal-view class="grey_bg">
+  <ion-nav-bar class="bar-royal">
+    
+    <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-close-round" ng-click="closeModal()">
+          </button>
+      </ion-nav-buttons>
+  </ion-nav-bar>
+  <ion-content class="has-header" padding="10">
+      <div class="list">
+      
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Pilih Hobbi
+        </div>
+        <select name="mySelect" id="mySelect" ng-change="changeOptionSelected(selectedOption)"
+            ng-options="option.name for option in hobbiOptions track by option.id"
+            ng-model="selectedOption"></select>
+        
+      </label>
+
+      
+      <button class="button button-block button-royal" ng-click="saveHobbi()">
+        Save
+      </button>
+      </div>
+  </ion-content>
+</ion-modal-view>
+</script>

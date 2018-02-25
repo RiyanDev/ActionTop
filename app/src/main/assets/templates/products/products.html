@@ -1,0 +1,41 @@
+<ion-view view-title="Products">
+   <div class="bar bar-subheader  item-input-inset ">
+    
+     <label class="item-input-wrapper">
+       <input type="search" ng-model="search" placeholder="Cari">
+     </label>
+     <button class="button button-clear button-small" ng-click="searchFilter()">
+        <i class="icon ion-ios-search placeholder-icon"></i>
+        </button>
+    
+ </div>
+
+   <ion-content class="post-content has-subheader">
+   	<ion-refresher
+       	pulling-text="Pull to refresh..."
+       	on-refresh="doRefresh()">
+     	</ion-refresher>
+      
+		  <div class="list card product-section" ng-repeat="item in items">
+        <div class="item item-body">
+          	<a href="#/app/product/{{item.id}}"><h2>{{item.nama}}</h2></a>
+        </div>
+        <div class="item item-image">
+          	<a href="#/app/product/{{item.id}}"><img ng-src="{{base_url_image}}{{item.url}}"></img></a>
+        </div>
+        <div class="item tabs tabs-secondary tabs-icon-left">
+            <a class="tab-item big-price assertive">
+               Rp {{item.harga_associated}}
+            </a>
+             <!--<a href="#/app/product/{{item.id}}" class="tab-item positive">
+               Details <i class="icon ion-log-in"></i>
+             </a>-->
+         </div>
+      </div>
+      <ion-infinite-scroll
+       	ng-if="postsCompleted == false"
+       	on-infinite="getPosts()"
+       	distance="10%">
+     	</ion-infinite-scroll>
+   </ion-content>
+</ion-view>

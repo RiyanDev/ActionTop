@@ -1,0 +1,50 @@
+<ion-view view-title="Order stockist" class="grey_bg">
+  	<ion-content padding="10">
+      
+      
+      	<form method="post" ng-submit="submitForm(postForm.$valid)" name="postForm" novalidate>
+            
+        		<label class="item item-input item-stacked-label">
+              <span class="input-label">Jumlah Gold</span>
+            	<input required ng-model="order.gold" name="gold" type="number" placeholder="Gold">
+            	<span ng-message class="warning-message-normal" ng-show="postForm.gold.$invalid && postForm.gold.$dirty">Required</span>
+        		</label>
+            <label class="item item-input item-stacked-label">
+              <span class="input-label">Jumlah Diamond</span>
+              <input required ng-model="order.diamond" name="diamond" type="number" placeholder="Diamond">
+              <span ng-message class="warning-message-normal" ng-show="postForm.diamond.$invalid && postForm.diamond.$dirty">Required</span>
+            </label>
+
+            <label class="item item-input item-stacked-label item-select order-stockist" ng-if="order.distributor != ''"> 
+              <span class="input-label">Pilih Distributor</span>
+              <select ng-model="order.stockis" ng-options="i.id as i.name for i in order.distributor">
+                <option value=""></option>
+              </select>
+            </label>
+            <h4 class="post-title">
+              Detail Pengiriman
+            </h4>
+        		
+            <label class="item item-input item-stacked-label">
+              <span class="input-label">Nama</span>
+              <input required ng-model="order.nama" name="nama" type="text" placeholder="Nama">
+              <span ng-message class="warning-message-normal" ng-show="postForm.nama.$invalid && postForm.nama.$dirty">Required</span>
+            </label>
+            <label class="item item-input item-stacked-label">
+              <span class="input-label">Telp</span>
+              <input required ng-model="order.telp" name="telp" type="text" placeholder="Telphone">
+              <span ng-message class="warning-message-normal" ng-show="postForm.telp.$invalid && postForm.telp.$dirty">Required</span>
+            </label>
+
+        		<label class="item item-input item-stacked-label">
+              <span class="input-label">Alamat</span>
+            	<textarea required ng-model="order.alamat" name="alamat" placeholder="Alamat" rows="10"></textarea>
+            	<span ng-message class="warning-message-normal" ng-show="postForm.alamat.$invalid && postForm.alamat.$dirty">Required</span>
+        		</label>
+        		<button class="button button-block button-royal">
+          		Order
+        		</button>
+        	</form>
+      </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,34 @@
+
+<ion-view class="has-subheader" view-title="{{titlemember}}">
+  <div class="bar bar-subheader" style="text-align:right;">
+    <select ng-model="typeorder" ng-change="doSort()">
+      <option value="baru">Baru</option>
+      <option value="lama">Lama</option>
+    </select>
+    
+  </div>
+   <ion-content  class="post-content has-subheader" >
+   	
+    <ion-refresher
+       	pulling-text="Pull to refresh..."
+       	on-refresh="doRefresh('{{typeorder}}')">
+     	</ion-refresher>
+      <div class="list card">
+        <div class="item item-avatar" ng-repeat="item in items">
+          <a href="#/app/user/{{item.objectId}}"  >
+            <img ng-src="{{item.avatar}}"></img>
+            <h2>{{item.nama}} - {{item.account}}</h2>
+            <h2>@{{item.objectId}}</h2>
+            
+          </a>
+          <button ng-if="item.active!='T'" ng-click="executeMember(item,'accept')" class="button button-small button-positive"> Activasi</button>
+          <button ng-if="item.active!='T'" ng-click="executeMember(item,'reject')" class="button button-small button-assertive" style="float:right;"> Cancel</button>
+        </div>
+      </div>
+      <ion-infinite-scroll
+       	ng-if="postsCompleted == false"
+       	on-infinite="getPosts('{{typeorder}}')"
+       	distance="10%">
+     	</ion-infinite-scroll>
+   </ion-content>
+</ion-view>

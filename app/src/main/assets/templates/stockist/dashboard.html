@@ -1,0 +1,65 @@
+<ion-view view-title="Stockist" class="grey_bg">
+	<ion-content has-header="false" style="background:url('img/splash.png')" class="cover-app">
+  		<ion-slide-box on-slide-changed="slideChanged(index)">
+    		<ion-slide class="slide-intro">
+            <div class="content info-section" ng-class="{ 'hide': showmenu === 'noshow' }">
+                <ul>
+                  <li>
+                    <a  href="#/app/orderstockist">
+                      <i class="icon ion-ios-home"></i>
+                      Order
+                    </a>
+                  </li>
+                  <li>
+                     <a  href="#/app/stockistmember/order">
+                      <i class="icon ion-ios-people"></i>
+                      Member Order
+                    </a>
+                  </li>
+                  <li>
+                    <a  href="#/app/stockistmember/aktif" >
+                      <i class="icon ion-ios-paper"></i>
+                      Member Aktif
+                    </a>
+                  </li>
+                 <!--  <li>
+                    <a href="#/app/stockistmemberagent" >
+                      <i class="icon ion-images"></i>
+                      Agent
+                    </a>
+                  </li> -->
+                  
+
+                </ul>
+            </div>
+            <div class="content info-section" ng-class="{ 'hide': showmenu === 'show' }">
+                <ul>
+                  <li>
+                    <a  href="#/app/orderstockist">
+                      <i class="icon ion-ios-home"></i>
+                      Order
+                    </a>
+                  </li>
+                  <li>
+                     <a  href="#/app/stockistmemberoder">
+                      <i class="icon ion-ios-people"></i>
+                      Member Order
+                    </a>
+                  </li>
+                  <li>
+                    <a  href="#/app/stockistmemberaktif" >
+                      <i class="icon ion-ios-paper"></i>
+                      Member Aktif
+                    </a>
+                  </li>
+                  
+
+                </ul>
+
+            </div>
+    		</ion-slide>
+    		
+       	
+  		</ion-slide-box>
+  	</ion-content>
+</ion-view>

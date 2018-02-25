@@ -1,0 +1,16 @@
+
+<div class="tabs tabs-icon-left">
+    <a class="tab-item" ng-click="goPrevious()">
+        <i class="icon ion-arrow-left-c"></i>
+        Prev
+    </a>
+    <a class="tab-item">{{pageNum}} / {{pageCount}}</a>
+    <a class="tab-item" ng-click="goNext()">
+        <i class="icon ion-arrow-right-c"></i>
+        Next
+    </a>
+</div>
+<div style="text-align:center">{{loading}}</div>
+<ion-scroll zooming="true" direction="xy" class="has-header">
+    <canvas class="padding" id="pdf" class="rotate0"></canvas>
+</ion-scroll>

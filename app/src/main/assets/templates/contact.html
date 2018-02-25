@@ -1,0 +1,37 @@
+<ion-view view-title="Contact us" class="grey_bg">
+  	<ion-content padding="10">
+      
+      <div class="list">
+        <div class="post-content" style="background-color: #fff;padding: 5px 10px;margin-bottom: 10px;">
+        <p><b>Head Office</b> : <br>Apartemen Metropolis - MKA 318, Jln. Tenggilis No 127 Surabaya - Jawa Timur Indonesia</p>
+        <p><b>Email</b> :<br>pengaduan@myazaria.com / bantuan@myazaria.com</p>
+        <p>
+           CS 1 : 0859 3100 0018 (PHONE)<br>
+           CS 2 : 0817 0385 3888 (PHONE)<br>
+           CS 3 : 0812 3220 4888 (WA General)<br>
+           CS 4 : 0857 5588 8683 (WA Perubahan Data)<br>
+           CS Barang : 0813 5556 7154 (WA only)<br>
+        </p>
+      </div>
+      	<form method="post" ng-submit="submitForm(postForm.$valid)" name="postForm" novalidate>
+        		<label class="item item-input">
+            	<input required ng-model="user.name" name="name" type="text" placeholder="Name">
+            	<span ng-message class="warning-message-normal" ng-show="postForm.name.$invalid && postForm.name.$dirty">Required</span>
+        		</label>
+        		<label class="item item-input">
+          		<input required type="email" ng-model="user.email" name="email" placeholder="Email" value="">
+        		</label>
+            
+        		<span ng-message class="item item-input warning-message-normal" ng-show="postForm.email.$error.required && postForm.email.$dirty">Required</span>
+        		<span ng-message class="item item-input warning-message-normal" ng-show="postForm.email.$error.email && postForm.email.$dirty">This is not a valid email.</span>
+        		<label class="item item-input">
+            	<textarea style="width: 100%;padding: 0;margin: 0;border: none;" required ng-model="user.details" name="details" placeholder="Comments" rows="10"></textarea>
+            	<span ng-message class="warning-message-normal" ng-show="postForm.details.$invalid && postForm.details.$dirty">Required</span>
+        		</label>
+        		<button class="button button-block button-royal">
+          		Submit
+        		</button>
+        	</form>
+      </div>
+  </ion-content>
+</ion-view>

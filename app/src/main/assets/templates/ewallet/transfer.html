@@ -1,0 +1,96 @@
+<ion-view view-title="Transfer E-Wallet" class="grey_bg">
+  	<ion-content padding="10">
+      <ion-refresher
+         	pulling-text="Pull to refresh..."
+         	on-refresh="doRefresh()">
+       	</ion-refresher>
+      <div class="list">
+        <div class="item item-divider">
+          <strong>Transfer E-Wallet</strong>
+        </div>
+        <div class="item item-text-wrap">
+          Saldo Anda Saat Ini
+          <span class="item-note">
+            <strong>{{info.saldo}}</strong>
+          </span>
+        </div>
+        <div class="item item-input-inset">
+          <label class="item-input-wrapper">
+            <input type="text" placeholder="Kode Member" ng-model="datatransfer.kode">
+          </label>
+          <button ng-click="findMember()" class="button button-small button-royal" ng-disabled="cekbutton">
+            {{cekmember}}
+          </button>
+        </div>
+        <label class="item item-input">
+          <span class="input-label">Jumlah Transfer</span>
+          <input type="text" ng-model="datatransfer.jumlah">
+        </label>
+        <button ng-click="doTransfer();" class="button button-block button-royal" ng-disabled="transferbtn">
+         	{{transferstr}}
+        </button>
+      </div>
+
+      <div class="list">
+        <div class="item item-divider">
+          <strong>History Transfer</strong>
+        </div>
+        <div class="item item-button-right" ng-repeat="data in data track by $index">
+          {{data.jumlah}}
+          <button class="button button-positive" ng-click="openModal($index)">
+            <i class="icon ion-information"></i>
+          </button>
+        </div>
+      </div>
+
+      <ion-infinite-scroll
+       	ng-if="postsCompleted == false"
+       	on-infinite="getData()"
+       	distance="10%">
+     	</ion-infinite-scroll>
+
+      <script id="templates/transfer.html" type = "text/ng-template">
+      <ion-modal-view>
+        <ion-header-bar class="bar bar-header bar-royal">
+          <h1 class="title">Detil History Transfer</h1>
+          <button class="button button-clear button-primary" ng-click="closeModal()">Kembali</button>
+        </ion-header-bar>
+        <ion-content padding="10">
+          <div class="list">
+            <div class="item">
+              Tanggal Penarikan
+              <span class="item-note">
+                {{detail.createdAt}}
+              </span>
+            </div>
+            <div class="item">
+              Tanggal Proses
+              <span class="item-note">
+                {{detail.processedAt}}
+              </span>
+            </div>
+            <div class="item" ng-switch="detail.status">
+              Status
+              <span class="item-note" ng-switch-when="K">
+                Kadaluarsa
+              </span>
+              <span class="item-note" ng-switch-when="S">
+                Sukses
+              </span>
+              <span class="item-note" ng-switch-when="P">
+                <a href="#" ng-click="showPopup(detail.idtrans);">Konfirmasi</a>
+              </span>
+            </div>
+            <div class="item">
+              Jumlah
+              <span class="item-note">
+                {{detail.jumlah}}
+              </span>
+            </div>
+          </div>
+        </ion-content>
+      </ion-modal-view>
+      </script>
+
+  </ion-content>
+</ion-view>

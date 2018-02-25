@@ -1,0 +1,62 @@
+<style>
+  .login-page {
+        background: url(img/background-login.jpg) no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+    }
+
+   .input-login {
+      background: #f4ebf2;
+      margin: 2px;
+   }
+
+   .btn-login {
+      background: #1DAC5F;
+      color: #fff;
+   } 
+
+   .list{
+     padding-left: 8%;
+     padding-right: 8%;
+   }
+
+   .btn-disabled{
+      cursor: default !important;
+      pointer-events: none;
+   }
+
+</style>
+
+<ion-view view-title="Login" class="grey_bg login-page">
+  	<ion-content padding="10">
+      <div class="list">
+			<p class="form_logo">
+         	<img title="" alt="" src="img/mainlogo.png" class="">
+         </p>
+        	<label class="item item-input input-login">
+          	<input type="text" placeholder="ID Member" ng-model="login.username">
+        	</label>
+
+        	<label class="item item-input input-login">
+          	<input type="password" placeholder="Password" ng-model="login.password">
+        	</label>
+         <!-- <a ng-href="#/app/forgot" class="button button-clear button-block button-royal">
+           	Forgot Password?
+         </a> -->
+        	<button ng-click="doLogin();" class="button button-block btn-login">
+           	Login
+         </button>
+         <button class="button button-clear button-block btn-disabled" ng-style="{'color':'#fff'}">
+           	Don't have an account?
+         </button>
+         <!-- <a onclick="window.open(this.href, '_system', 'location=yes'); return false;" ng-href="http://myazaria.com/site/registrasi" class="button button-clear button-block button-royal">
+           	Create Account
+         </a> -->
+         <a href="#/app/associate" class="button button-clear button-block button-royal" ng-style="{'color':'#282e66'}">
+            Create Account
+         </a>
+      </div>
+      
+  </ion-content>
+</ion-view>
